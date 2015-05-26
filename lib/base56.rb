@@ -1,4 +1,4 @@
-module Base58
+module Base56
   #@source A discussion from stackoverflow
 
   #list of possible chars without the mutually confusing alpahbets like 1, l, 0, O etc.
