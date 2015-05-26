@@ -12,11 +12,14 @@ class ShortensController < ApplicationController
 
   def expand
     @url = Url.find_by_slug(params[:slug])
-    respond_with @url
+    if @url.present?
+      respond_with @url
+    else
+      respond_with nil, status: 404
+    end
   end
 
   private
-
   def urls_params
     params.permit(:slug, :url)
   end
