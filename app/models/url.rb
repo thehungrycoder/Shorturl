@@ -13,7 +13,7 @@ class Url < ActiveRecord::Base
         retries ||= MAX_RETRY
         self.slug = ::Shortener.generate self.id
         self.save!
-      rescue self::RecordNotUnique
+      rescue ActiveRecord::RecordInvalid
         retry if (retries -= 1).nonzero?
       else
         self

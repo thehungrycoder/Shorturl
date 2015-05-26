@@ -30,4 +30,10 @@ RSpec.describe Url, type: :model do
     expect(url.slug).to eq('xyz')
   end
 
+  it 'should retry if a slug already exists' do
+    allow(Shortener).to receive(:generate).and_return('xyz')
+    url1 = Url.create(url: 'http://google.com')
+    url2 = Url.create(url: 'http://google2.com')
+    expect(Shortener).to have_received(:generate).exactly(6).times
+  end
 end
