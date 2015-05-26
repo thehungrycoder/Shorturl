@@ -1,27 +1,22 @@
-== README
+== SETUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone repo after installing RVM
+* Enter to the directory the repo being cloned to
+* Run `bundle install`
 
-Things you may want to cover:
 
-* Ruby version
+== Usages
+=== Create a short URL
 
-* System dependencies
+```
+curl --data "url=http://yahoo.net" http://localhost:3001
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+=== Expand a shortened URL
+```
+curl http://localhost:3001/:slug
+```
+Replace `:slug` with actual shortened slug
 
 
 Please feel free to use a different markup language if you do not plan to run
