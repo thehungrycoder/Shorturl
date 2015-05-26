@@ -1,4 +1,4 @@
-# SETUP
+# Setup
 
 * Clone repo after installing RVM
 * Enter to the directory the repo being cloned to
@@ -20,3 +20,9 @@ curl http://localhost:3000/:slug
 ```
 
 *Note*: Replace port from `3000` to your local running port. Replace `:slug` with actual shortened slug.
+
+
+# Run Tests
+```
+bundle exec rspec
+```
